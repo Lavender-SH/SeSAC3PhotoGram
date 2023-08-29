@@ -14,6 +14,7 @@ class NameSettingViewController: UIViewController, UITextFieldDelegate {
         textField.placeholder = "제목을 입력해주세요"
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1
+        textField.textColor = .white
         return textField
     }()
     
@@ -33,10 +34,11 @@ class NameSettingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+
         
-        //2
-        nameComplitionHandler?(nameTextField.text!)
+        
     }
+    
     
     @objc func saveButtonClicked() {
         print(#function)

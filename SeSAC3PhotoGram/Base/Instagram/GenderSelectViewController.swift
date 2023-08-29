@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GederSelectViewController: UIViewController {
+class GenderSelectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
