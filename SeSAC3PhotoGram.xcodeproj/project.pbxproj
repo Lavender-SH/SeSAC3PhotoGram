@@ -20,7 +20,51 @@
 		0277C6752A9C337A004C093E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6742A9C337A004C093E /* SearchView.swift */; };
 		0277C6772A9C365F004C093E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6762A9C365F004C093E /* BaseCollectionViewCell.swift */; };
 		0277C6792A9C37FD004C093E /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6782A9C37FD004C093E /* SearchCollectionViewCell.swift */; };
+		0277C67C2A9D7BEB004C093E /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C67B2A9D7BEB004C093E /* Notification+Extension.swift */; };
+		0277C67E2A9D7C81004C093E /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C67D2A9D7C81004C093E /* DateView.swift */; };
+		0277C6802A9D7DCD004C093E /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C67F2A9D7DCD004C093E /* DateViewController.swift */; };
+		0277C6822A9D8E8F004C093E /* DateFormat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6812A9D8E8F004C093E /* DateFormat+Extension.swift */; };
+		0277C6B52A9D9BC8004C093E /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0277C6B12A9D9B38004C093E /* SeSACFramework.framework */; };
+		0277C6B62A9D9BC8004C093E /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0277C6B12A9D9B38004C093E /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0277C6B92A9DB55A004C093E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6B82A9DB55A004C093E /* TitleViewController.swift */; };
+		0277C6BB2A9DBB65004C093E /* PlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6BA2A9DBB65004C093E /* PlusViewController.swift */; };
+		0277C6C02A9DC759004C093E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6BF2A9DC759004C093E /* WebViewController.swift */; };
+		0277C6C32A9E1D2C004C093E /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C22A9E1D2C004C093E /* InstagramViewController.swift */; };
+		0277C6C52A9E2181004C093E /* NameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C42A9E2181004C093E /* NameSettingViewController.swift */; };
+		0277C6C72A9E21A4004C093E /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C62A9E21A4004C093E /* NickNameViewController.swift */; };
+		0277C6C92A9E21C8004C093E /* GederSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C82A9E21C8004C093E /* GederSelectViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0277C6B02A9D9B38004C093E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0277C6AB2A9D9B38004C093E /* SeSACFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0277C68D2A9D92AF004C093E;
+			remoteInfo = SeSACFramework;
+		};
+		0277C6B22A9D9B38004C093E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0277C6AB2A9D9B38004C093E /* SeSACFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0277C6972A9D92AF004C093E;
+			remoteInfo = SeSACFrameworkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0277C6B72A9D9BC8004C093E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0277C6B62A9D9BC8004C093E /* SeSACFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0277C6452A9C1D8A004C093E /* SeSAC3PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +81,18 @@
 		0277C6742A9C337A004C093E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0277C6762A9C365F004C093E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		0277C6782A9C37FD004C093E /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		0277C67B2A9D7BEB004C093E /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		0277C67D2A9D7C81004C093E /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		0277C67F2A9D7DCD004C093E /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		0277C6812A9D8E8F004C093E /* DateFormat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extension.swift"; sourceTree = "<group>"; };
+		0277C6AB2A9D9B38004C093E /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
+		0277C6B82A9DB55A004C093E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		0277C6BA2A9DBB65004C093E /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
+		0277C6BF2A9DC759004C093E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0277C6C22A9E1D2C004C093E /* InstagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
+		0277C6C42A9E2181004C093E /* NameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingViewController.swift; sourceTree = "<group>"; };
+		0277C6C62A9E21A4004C093E /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
+		0277C6C82A9E21C8004C093E /* GederSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GederSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0277C66E2A9C2A43004C093E /* SnapKit in Frameworks */,
+				0277C6B52A9D9BC8004C093E /* SeSACFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,8 +111,10 @@
 		0277C63C2A9C1D8A004C093E = {
 			isa = PBXGroup;
 			children = (
+				0277C6AB2A9D9B38004C093E /* SeSACFramework.xcodeproj */,
 				0277C6472A9C1D8A004C093E /* SeSAC3PhotoGram */,
 				0277C6462A9C1D8A004C093E /* Products */,
+				0277C6B42A9D9BC8004C093E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +129,8 @@
 		0277C6472A9C1D8A004C093E /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				0277C6BF2A9DC759004C093E /* WebViewController.swift */,
+				0277C67A2A9D7BC1004C093E /* Extension */,
 				0277C6712A9C2FCA004C093E /* Add */,
 				0277C6642A9C2727004C093E /* Search */,
 				0277C6612A9C23FD004C093E /* Base */,
@@ -88,6 +149,7 @@
 				0277C6622A9C2419004C093E /* BaseViewController.swift */,
 				0277C66F2A9C2EC2004C093E /* BaseView.swift */,
 				0277C6762A9C365F004C093E /* BaseCollectionViewCell.swift */,
+				0277C6C12A9E1CC8004C093E /* Instagram */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -107,8 +169,48 @@
 			children = (
 				0277C64C2A9C1D8A004C093E /* AddViewController.swift */,
 				0277C6722A9C2FFD004C093E /* AddView.swift */,
+				0277C67D2A9D7C81004C093E /* DateView.swift */,
+				0277C67F2A9D7DCD004C093E /* DateViewController.swift */,
+				0277C6B82A9DB55A004C093E /* TitleViewController.swift */,
+				0277C6BA2A9DBB65004C093E /* PlusViewController.swift */,
 			);
 			path = Add;
+			sourceTree = "<group>";
+		};
+		0277C67A2A9D7BC1004C093E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0277C67B2A9D7BEB004C093E /* Notification+Extension.swift */,
+				0277C6812A9D8E8F004C093E /* DateFormat+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0277C6AC2A9D9B38004C093E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0277C6B12A9D9B38004C093E /* SeSACFramework.framework */,
+				0277C6B32A9D9B38004C093E /* SeSACFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0277C6B42A9D9BC8004C093E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0277C6C12A9E1CC8004C093E /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				0277C6C22A9E1D2C004C093E /* InstagramViewController.swift */,
+				0277C6C42A9E2181004C093E /* NameSettingViewController.swift */,
+				0277C6C62A9E21A4004C093E /* NickNameViewController.swift */,
+				0277C6C82A9E21C8004C093E /* GederSelectViewController.swift */,
+			);
+			path = Instagram;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +223,7 @@
 				0277C6412A9C1D8A004C093E /* Sources */,
 				0277C6422A9C1D8A004C093E /* Frameworks */,
 				0277C6432A9C1D8A004C093E /* Resources */,
+				0277C6B72A9D9BC8004C093E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,12 +266,35 @@
 			);
 			productRefGroup = 0277C6462A9C1D8A004C093E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0277C6AC2A9D9B38004C093E /* Products */;
+					ProjectRef = 0277C6AB2A9D9B38004C093E /* SeSACFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0277C6442A9C1D8A004C093E /* SeSAC3PhotoGram */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0277C6B12A9D9B38004C093E /* SeSACFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SeSACFramework.framework;
+			remoteRef = 0277C6B02A9D9B38004C093E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0277C6B32A9D9B38004C093E /* SeSACFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SeSACFrameworkTests.xctest;
+			remoteRef = 0277C6B22A9D9B38004C093E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0277C6432A9C1D8A004C093E /* Resources */ = {
@@ -187,16 +313,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0277C6C72A9E21A4004C093E /* NickNameViewController.swift in Sources */,
+				0277C67C2A9D7BEB004C093E /* Notification+Extension.swift in Sources */,
+				0277C6C52A9E2181004C093E /* NameSettingViewController.swift in Sources */,
 				0277C6732A9C2FFE004C093E /* AddView.swift in Sources */,
+				0277C6C92A9E21C8004C093E /* GederSelectViewController.swift in Sources */,
 				0277C6662A9C2754004C093E /* SearchViewController.swift in Sources */,
 				0277C6772A9C365F004C093E /* BaseCollectionViewCell.swift in Sources */,
+				0277C6822A9D8E8F004C093E /* DateFormat+Extension.swift in Sources */,
 				0277C64D2A9C1D8A004C093E /* AddViewController.swift in Sources */,
+				0277C6BB2A9DBB65004C093E /* PlusViewController.swift in Sources */,
+				0277C6802A9D7DCD004C093E /* DateViewController.swift in Sources */,
 				0277C6792A9C37FD004C093E /* SearchCollectionViewCell.swift in Sources */,
+				0277C67E2A9D7C81004C093E /* DateView.swift in Sources */,
 				0277C6632A9C2419004C093E /* BaseViewController.swift in Sources */,
 				0277C6752A9C337A004C093E /* SearchView.swift in Sources */,
+				0277C6C02A9DC759004C093E /* WebViewController.swift in Sources */,
 				0277C6702A9C2EC2004C093E /* BaseView.swift in Sources */,
 				0277C6492A9C1D8A004C093E /* AppDelegate.swift in Sources */,
+				0277C6C32A9E1D2C004C093E /* InstagramViewController.swift in Sources */,
 				0277C64B2A9C1D8A004C093E /* SceneDelegate.swift in Sources */,
+				0277C6B92A9DB55A004C093E /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

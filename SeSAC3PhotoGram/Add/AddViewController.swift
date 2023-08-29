@@ -6,7 +6,20 @@
 //
 
 import UIKit
+import SeSACFramework
 
+//Protocol 값전달. 1.
+protocol PassDataDelegate {
+    func receiveData(date: Date)
+}
+
+protocol PassImageDelegate {
+    func receiveImage(image: UIImage)
+    
+//    if let name = notification.userInfo?["name"] as? String {
+//        mainView.photoImageView.image = UIImage(systemName: name)
+//    }
+}
 
 class AddViewController: BaseViewController {
 
@@ -23,12 +36,25 @@ class AddViewController: BaseViewController {
         super.viewDidLoad()
         //configureView()
         //setConstraints()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: NSNotification.Name("SelectImage"), object: nil)
-        
-        
+//        ClassOpenExample.privateExample()
+//        ClassPublicExample.publicExample()
+//        ClassInternalExample.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: NSNotification.Name("SelectImage"), object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("SelectImage"), object: nil)
+    }
+    
     @objc func selectImageNotificationObserver(notification: NSNotification) {
+        print(#function)
         print("selectImageNotificationObserver")
         print(notification.userInfo?["name"])
         print(notification.userInfo?["sample"])
@@ -40,8 +66,8 @@ class AddViewController: BaseViewController {
     
     @objc func searchButtonClicked() {
         let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
-        //NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
-        present(SearchViewController(), animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
+        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
     
 
@@ -51,8 +77,46 @@ class AddViewController: BaseViewController {
         print("Add ConfigureView")
         view.backgroundColor = .white
         mainView.searchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside)
+        mainView.dateButton.addTarget(self, action: #selector(dateButtonClicked), for: .touchUpInside)
+        mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonClicked), for: .touchUpInside)
+        mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
+        mainView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
+        
         
     }
+    @objc func plusButtonClicked() {
+        let vc = PlusViewController()
+        vc.dataPass = { gg in
+            self.mainView.plusButton.setTitle(gg, for: .normal)
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    //Closure - 3
+    @objc func titleButtonClicked() {
+        let vc = TitleViewController()
+        vc.completionHandler = { title, age, push in
+            self.mainView.titleButton.setTitle(title, for: .normal)
+            print("completionHandler", age, push)
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @objc func dateButtonClicked() {
+        //Protocol 값 전달 5
+        let vc = DateViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func searchProtocolButtonClicked() {
+        let vc = SearchViewController()
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
     
     override func setConstraints() { //제약조건
         super.setConstraints()
@@ -60,10 +124,23 @@ class AddViewController: BaseViewController {
 
     }
     
-    
-    
-    
-    
-    
 }
+
+//Protocol 값 전달 4
+extension AddViewController: PassDataDelegate {
+    func receiveData(date: Date) {
+        mainView.dateButton.setTitle(DateFormatter.convertDate(date: date), for: .normal)
+    }
+    
+
+}
+
+extension AddViewController: PassImageDelegate {
+    func receiveImage(image: UIImage) {
+        mainView.photoImageView.image = image
+    }
+        
+    }
+    
+
 
