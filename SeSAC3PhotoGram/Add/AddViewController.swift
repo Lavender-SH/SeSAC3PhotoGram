@@ -39,6 +39,7 @@ class AddViewController: BaseViewController {
 //        ClassOpenExample.privateExample()
 //        ClassPublicExample.publicExample()
 //        ClassInternalExample.
+        APIService.shared.callRequeset()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,13 +66,35 @@ class AddViewController: BaseViewController {
     }
     
     @objc func searchButtonClicked() {
-        let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
-        NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+//        let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
+//        NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
+        
+        
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let galleryAction = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            
+            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+        }
+        
+        let webSearchAction = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
+            
+            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        actionSheet.addAction(galleryAction)
+        actionSheet.addAction(webSearchAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    
+        
+
     }
     
-
-
+    
     override func configureView() { //addSubView
         super.configureView()
         print("Add ConfigureView")
@@ -82,7 +105,7 @@ class AddViewController: BaseViewController {
         mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
         mainView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
         
-        
+        APIService.shared.callRequeset()
     }
     @objc func plusButtonClicked() {
         let vc = PlusViewController()

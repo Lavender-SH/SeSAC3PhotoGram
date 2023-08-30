@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+
 class NameSettingViewController: UIViewController, UITextFieldDelegate {
     
     let nameTextField = {
@@ -29,6 +30,7 @@ class NameSettingViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(nameTextField)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
         setConstraints()
+        
     }
     
     

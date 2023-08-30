@@ -33,6 +33,8 @@
 		0277C6C52A9E2181004C093E /* NameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C42A9E2181004C093E /* NameSettingViewController.swift */; };
 		0277C6C72A9E21A4004C093E /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C62A9E21A4004C093E /* NickNameViewController.swift */; };
 		0277C6C92A9E21C8004C093E /* GenderSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6C82A9E21C8004C093E /* GenderSelectViewController.swift */; };
+		0277C6CC2A9EC75A004C093E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6CB2A9EC75A004C093E /* APIService.swift */; };
+		0277C6CE2A9EEBE8004C093E /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		0277C6C42A9E2181004C093E /* NameSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSettingViewController.swift; sourceTree = "<group>"; };
 		0277C6C62A9E21A4004C093E /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		0277C6C82A9E21C8004C093E /* GenderSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectViewController.swift; sourceTree = "<group>"; };
+		0277C6CB2A9EC75A004C093E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 		0277C6472A9C1D8A004C093E /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				0277C6C12A9E1CC8004C093E /* Instagram */,
 				0277C6BF2A9DC759004C093E /* WebViewController.swift */,
+				0277C6CA2A9EC739004C093E /* Network */,
 				0277C67A2A9D7BC1004C093E /* Extension */,
 				0277C6712A9C2FCA004C093E /* Add */,
 				0277C6642A9C2727004C093E /* Search */,
@@ -149,7 +155,6 @@
 				0277C6622A9C2419004C093E /* BaseViewController.swift */,
 				0277C66F2A9C2EC2004C093E /* BaseView.swift */,
 				0277C6762A9C365F004C093E /* BaseCollectionViewCell.swift */,
-				0277C6C12A9E1CC8004C093E /* Instagram */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -211,6 +216,15 @@
 				0277C6C82A9E21C8004C093E /* GenderSelectViewController.swift */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		0277C6CA2A9EC739004C093E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0277C6CB2A9EC75A004C093E /* APIService.swift */,
+				0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,10 +331,12 @@
 				0277C67C2A9D7BEB004C093E /* Notification+Extension.swift in Sources */,
 				0277C6C52A9E2181004C093E /* NameSettingViewController.swift in Sources */,
 				0277C6732A9C2FFE004C093E /* AddView.swift in Sources */,
+				0277C6CC2A9EC75A004C093E /* APIService.swift in Sources */,
 				0277C6C92A9E21C8004C093E /* GenderSelectViewController.swift in Sources */,
 				0277C6662A9C2754004C093E /* SearchViewController.swift in Sources */,
 				0277C6772A9C365F004C093E /* BaseCollectionViewCell.swift in Sources */,
 				0277C6822A9D8E8F004C093E /* DateFormat+Extension.swift in Sources */,
+				0277C6CE2A9EEBE8004C093E /* URLSessionViewController.swift in Sources */,
 				0277C64D2A9C1D8A004C093E /* AddViewController.swift in Sources */,
 				0277C6BB2A9DBB65004C093E /* PlusViewController.swift in Sources */,
 				0277C6802A9D7DCD004C093E /* DateViewController.swift in Sources */,
