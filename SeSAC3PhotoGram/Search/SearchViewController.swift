@@ -13,6 +13,7 @@ class SearchViewController: BaseViewController {
     let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
 
     var delegate: PassImageDelegate?
+    var selectedImage: UIImage?
     
     override func loadView() {
         self.view = mainView
@@ -27,11 +28,12 @@ class SearchViewController: BaseViewController {
         mainView.searchBar.becomeFirstResponder()
         mainView.searchBar.delegate = self
         
-//        let appearance = UINavigationBarAppearance()
-//        appearance.backgroundColor = .blue
-//        navigationController?.navigationBar.isTranslucent = false
-//        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-//        navigationController?.navigationBar.standardAppearance = appearance
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .white
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+        
     }
                                                
                                                
@@ -59,7 +61,6 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageList.count
     }
@@ -67,7 +68,8 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        //cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        cell.imageView.image = selectedImage
         return cell
     }
     
@@ -84,3 +86,4 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     
 }
+

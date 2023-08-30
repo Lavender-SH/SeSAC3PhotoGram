@@ -21,7 +21,7 @@ protocol PassImageDelegate {
 //    }
 }
 
-class AddViewController: BaseViewController {
+class AddViewController: BaseViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     
     
@@ -73,8 +73,12 @@ class AddViewController: BaseViewController {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let galleryAction = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
             
-            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+            //self.navigationController?.pushViewController(SearchViewController(), animated: true)
         }
         
         let webSearchAction = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
@@ -93,6 +97,19 @@ class AddViewController: BaseViewController {
         
 
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            picker.dismiss(animated: true, completion: nil)
+            
+            let searchVC = SearchViewController()
+            searchVC.selectedImage = selectedImage
+            
+            mainView.photoImageView.image = selectedImage
+            navigationController?.pushViewController(searchVC, animated: true)
+        }
+    }
+    
     
     
     override func configureView() { //addSubView
