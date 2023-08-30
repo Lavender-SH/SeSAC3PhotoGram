@@ -23,7 +23,7 @@ protocol PassImageDelegate {
 
 class AddViewController: BaseViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
-    
+    var networkManager = SearchPhotoAPI.shared
     
     let mainView = AddView()
     
@@ -39,7 +39,22 @@ class AddViewController: BaseViewController, UIImagePickerControllerDelegate & U
 //        ClassOpenExample.privateExample()
 //        ClassPublicExample.publicExample()
 //        ClassInternalExample.
+        
         APIService.shared.callRequeset()
+//        SearchPhotoAPI.shared.callRequest(query: "universe") { rawUrls in
+//            if let firstRawUrl = rawUrls.first {
+//                DispatchQueue.global().async {
+//                    if let imageUrl = URL(string: firstRawUrl),
+//                       let imageData = try? Data(contentsOf: imageUrl),
+//                       let image = UIImage(data: imageData) {
+//                        DispatchQueue.main.async {
+//                            self.mainView.photoImageView.image = image
+//                        }
+//                    }
+//                }
+//            }
+//        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,7 +138,18 @@ class AddViewController: BaseViewController, UIImagePickerControllerDelegate & U
         mainView.plusButton.addTarget(self, action: #selector(plusButtonClicked), for: .touchUpInside)
         
         APIService.shared.callRequeset()
+        
     }
+    
+//    func presentSearchViewController() {
+//        let searchVC = SearchViewController()
+//        searchVC.didSelectImageClosure = { [weak self] selectedImage in
+//            self?.mainView.photoImageView.image = selectedImage
+//        }
+//        //navigationController?.pushViewController(searchVC, animated: true)
+//        
+//    }
+    
     @objc func plusButtonClicked() {
         let vc = PlusViewController()
         vc.dataPass = { gg in
@@ -182,5 +208,6 @@ extension AddViewController: PassImageDelegate {
         
     }
     
+
 
 
