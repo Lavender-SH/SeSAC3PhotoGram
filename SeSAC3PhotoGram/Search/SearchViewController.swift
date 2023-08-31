@@ -11,12 +11,16 @@ class SearchViewController: BaseViewController {
     
     
     let mainView = SearchView()
+    //var addVC = AddViewController()
     let addVC = AddViewController()
     let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
-    
+   // let addVC = AddViewController()
     var delegate: PassImageDelegate?
+    
     var didSelectImageClosure: ((UIImage) -> Void)?
+    
     var selectedImage: UIImage?
+    var webSelectedImage: UIImage?
     var rawUrls: [String] = []
     
     override func loadView() {
@@ -39,20 +43,76 @@ class SearchViewController: BaseViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         
     }
+   // ⭐️⭐️⭐️
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+////        didSelectImageClosure = { [weak self] selectedImage in
+////            self?.addVC.realView.photoImageView.image = selectedImage
+////        }
+//        //let addVC = AddViewController()
+//
+////        didSelectImageClosure = { selectedImage in
+////            self.addVC.realView.photoImageView.image = selectedImage
+////            print(selectedImage)
+////
+////        }
+//
+//
+//
+////        didSelectImageClosure = { webSelectedImage in
+////            self.addVC.realView.photoImageView.image = webSelectedImage
+////            print(webSelectedImage)
+//
+//        //didSelectImageClosure()
+//
+//        }
+//
+//        navigationController?.pushViewController(addVC, animated: true)
+//
+//
+//    }
+//    // SearchViewController.swift
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//        let addVC = AddViewController()  // AddViewController의 인스턴스 생성
+//
+//        // 이미지 선택 시 클로저 실행
+//        didSelectImageClosure = { [weak self] selectedImage in
+//            addVC.realView.photoImageView.image = selectedImage
+//            print(selectedImage)
+//
+//            self?.navigationController?.pushViewController(addVC, animated: true)
+//        }
+//
+//        // ...
+//    }
+
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        
-            didSelectImageClosure = { [weak self] selectedImage in
-                self?.addVC.mainView.photoImageView.image = selectedImage
-                
-                //self?.addphotoImageView.image = selectedImage
-            }
-            navigationController?.pushViewController(addVC, animated: true)
-            
-        
-    }
+    
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//        let addVC2 = AddViewController()  // AddViewController 인스턴스 생성
+//
+//        // 이미지 선택 시 클로저 실행
+//        didSelectImageClosure = { [weak self] selectedImage in
+//            // 웹 이미지인지 아닌지 확인하여 설정
+//            if let webSelectedImage = self?.selectedImage {
+//                addVC2.realView.photoImageView.image = webSelectedImage
+//                print(webSelectedImage)
+//            } else {
+//                addVC2.realView.photoImageView.image = selectedImage
+//                print(selectedImage)
+//            }
+//        }
+//
+//        // AddViewController로 전환
+//        navigationController?.pushViewController(addVC2, animated: true)
+//    }
+
 
     
     @objc func recommandKeywordNotificationObserver(notification: NSNotification) {
@@ -69,7 +129,7 @@ class SearchViewController: BaseViewController {
     }
     
 }
-
+//⭐️⭐️⭐️
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
@@ -80,7 +140,6 @@ extension SearchViewController: UISearchBarDelegate {
                 self.mainView.collectionView.reloadData()
             }
         }
-        
         searchBar.resignFirstResponder()
     }
 }
@@ -93,7 +152,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rawUrls.count
     }
-    
+    //⭐️⭐️⭐️
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else {
             return UICollectionViewCell()
@@ -126,18 +185,24 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(rawUrls[indexPath.item])
+        print(rawUrls[indexPath.item], "==1==")
         
         //delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.item])!)
         //Notification을 통한 값전달
         //NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name" : imageList[indexPath.item], "sample": "고래밥"])
-        if let selectedImage = UIImage(systemName: imageList[indexPath.item]) {
+        if let selectedImage = UIImage(systemName: rawUrls[indexPath.item]) {
+            print(selectedImage, "==2==")
                 didSelectImageClosure?(selectedImage)
             }
+        
+        if let webSelectedImage = UIImage(systemName: rawUrls[indexPath.item]) {
+                print(webSelectedImage, "==3==")
+                didSelectImageClosure?(webSelectedImage)
+            }
+        
+        
         
         dismiss(animated: true)
     }
     
 }
-
-

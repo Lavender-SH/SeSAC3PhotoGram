@@ -37,6 +37,8 @@
 		0277C6CE2A9EEBE8004C093E /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */; };
 		0277C6D02A9F7809004C093E /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6CF2A9F7809004C093E /* SearchAPI.swift */; };
 		0277C6D32A9F796E004C093E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0277C6D22A9F796E004C093E /* Alamofire */; };
+		0277C6E72AA0267F004C093E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6E62AA0267F004C093E /* HomeView.swift */; };
+		0277C6E92AA026A3004C093E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C6E82AA026A3004C093E /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		0277C6CB2A9EC75A004C093E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		0277C6CF2A9F7809004C093E /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		0277C6E62AA0267F004C093E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0277C6E82AA026A3004C093E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		0277C6472A9C1D8A004C093E /* SeSAC3PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				0277C6E52AA02628004C093E /* Home */,
 				0277C6C12A9E1CC8004C093E /* Instagram */,
 				0277C6BF2A9DC759004C093E /* WebViewController.swift */,
 				0277C6CA2A9EC739004C093E /* Network */,
@@ -230,6 +235,15 @@
 				0277C6CD2A9EEBE8004C093E /* URLSessionViewController.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0277C6E52AA02628004C093E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0277C6E82AA026A3004C093E /* HomeViewController.swift */,
+				0277C6E62AA0267F004C093E /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +351,7 @@
 				0277C6C72A9E21A4004C093E /* NickNameViewController.swift in Sources */,
 				0277C67C2A9D7BEB004C093E /* Notification+Extension.swift in Sources */,
 				0277C6D02A9F7809004C093E /* SearchAPI.swift in Sources */,
+				0277C6E72AA0267F004C093E /* HomeView.swift in Sources */,
 				0277C6C52A9E2181004C093E /* NameSettingViewController.swift in Sources */,
 				0277C6732A9C2FFE004C093E /* AddView.swift in Sources */,
 				0277C6CC2A9EC75A004C093E /* APIService.swift in Sources */,
@@ -344,6 +359,7 @@
 				0277C6662A9C2754004C093E /* SearchViewController.swift in Sources */,
 				0277C6772A9C365F004C093E /* BaseCollectionViewCell.swift in Sources */,
 				0277C6822A9D8E8F004C093E /* DateFormat+Extension.swift in Sources */,
+				0277C6E92AA026A3004C093E /* HomeViewController.swift in Sources */,
 				0277C6CE2A9EEBE8004C093E /* URLSessionViewController.swift in Sources */,
 				0277C64D2A9C1D8A004C093E /* AddViewController.swift in Sources */,
 				0277C6BB2A9DBB65004C093E /* PlusViewController.swift in Sources */,

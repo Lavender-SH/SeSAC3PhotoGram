@@ -18,12 +18,19 @@ class TitleViewController: BaseViewController {
     //Closure - 1
     var completionHandler: ((String, Int, Bool) -> Void)?
     
+    deinit {
+        print("deinit", self)
+    }
+    
+    
     override func configureView() {
         super.configureView()
         
         view.addSubview(textField)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneButtonClicked))
+        
+        
         
     }
     
